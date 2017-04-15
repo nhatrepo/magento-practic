@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <Practice_Weblog>
+            <version>0.1.0</version>
+        </Practice_Weblog>
+    </modules>
+    <frontend>
+        <routers>
+            <weblog>
+                <use>standard</use>
+                <args>
+                    <module>Practice_Weblog</module>
+                    <frontName>practice_weblog</frontName>
+                </args>
+            </weblog>
+        </routers>
+    </frontend>
+
+    <global>
+        <models>
+            <weblog>
+                <class>Practice_Weblog_Model</class>
+                <resourceModel>weblog_mysql4</resourceModel>
+            </weblog>
+            <resourceModel>
+                <weblog_mysql4>
+                    <class>Practice_Weblog_Model_Mysql4</class>
+                </weblog_mysql4>
+            </resourceModel>
+        </models>
+    </global>
+</config>
