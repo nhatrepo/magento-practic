@@ -11,23 +11,40 @@
                 <use>standard</use>
                 <args>
                     <module>Practice_Weblog</module>
-                    <frontName>practice_weblog</frontName>
+                    <frontName>weblog</frontName>
                 </args>
             </weblog>
         </routers>
     </frontend>
-
     <global>
         <models>
             <weblog>
                 <class>Practice_Weblog_Model</class>
-                <resourceModel>weblog_mysql4</resourceModel>
+                <resourceModel>weblog_resource</resourceModel>
             </weblog>
-            <resourceModel>
-                <weblog_mysql4>
-                    <class>Practice_Weblog_Model_Mysql4</class>
-                </weblog_mysql4>
-            </resourceModel>
+            <weblog_resource>
+                <class>Practice_Weblog_Model_Resource</class>
+                <entities>
+                    <post>
+                        <table>blog_posts</table>
+                    </post>
+                    <adminUser>
+                        <table>admin_user</table>
+                    </adminUser>
+                </entities>
+            </weblog_resource>
         </models>
+        <resources>
+            <weblog_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </weblog_write>
+            <weblog_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </weblog_read>
+        </resources>
     </global>
 </config>
