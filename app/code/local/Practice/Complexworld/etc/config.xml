@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<config>
+    <modules>
+        <Practice_Complexworld>
+            <version>0.1.0</version>
+        </Practice_Complexworld>
+    </modules>
+    <frontend>
+        <routers>
+            <complexworld>
+                <use>standard</use>
+                <args>
+                    <module>Practice_Complexworld</module>
+                    <frontName>complexworld</frontName>
+                </args>
+            </complexworld>
+        </routers>
+    </frontend>
+    <global>
+        <models>
+            <complexworld>
+                <class>Practice_Complexworld_Model</class>
+                <resourceModel>complexworld_resource_eav_mysql4</resourceModel>
+            </complexworld>
+            <complexworld_resource_eav_mysql4>
+                <class>Practice_Complexworld_Model_Resource_Eav_Mysql4</class>
+                <entities>
+                    <eavblogpost>
+                        <table>eavblog_posts</table>
+                    </eavblogpost>
+                </entities>
+            </complexworld_resource_eav_mysql4>
+        </models>
+
+        <resources>
+            <complexworld_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </complexworld_write>
+            <complexworld_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </complexworld_read>
+        </resources>
+    </global>
+</config>

@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <inchoo_config translate="label" module="inchoo_blog">
+            <label>Inchoo Config</label>
+            <sort_order>999</sort_order>
+        </inchoo_config>
+    </tabs>
+    <sections>
+        <!--<blog_option2 translate="label" module="inchoo_blog">-->
+            <!--<label>Blog Config Options 2</label>-->
+            <!--<tab>general</tab>-->
+            <!--<frontend_type>text</frontend_type>-->
+            <!--<sort_order>100</sort_order>-->
+            <!--<show_in_default>1</show_in_default>-->
+            <!--<show_in_website>1</show_in_website>-->
+            <!--<show_in_store>1</show_in_store>-->
+        <!--</blog_option2>-->
+        <blog_option translate="label" module="inchoo_blog">
+            <label>Blog Config Options</label>
+            <tab>inchoo_config</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>10</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <messages translate="label">
+                    <label>Demo Of Config Fields</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <blog_message>
+                            <label>Message</label>
+                            <frontend_type>image</frontend_type>
+                            <!--<source_model>inchoo_blog/words::toFillField</source_model>-->
+                            <!--<validate>validate-email</validate>-->
+                            <!--<upload_dir config="system/filesystem/media" scope_info="1">upload</upload_dir>-->
+                            <sort_order>1</sort_order>
+                            <frontend_class>field form</frontend_class>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </blog_message>
+                        <blog_time>
+                            <label>Time to Say Hello</label>
+                            <frontend_type>time</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </blog_time>
+                    </fields>
+                </messages>
+            </groups>
+        </blog_option>
+        <!--<blog_option2 translate="label" module="inchoo_blog">-->
+            <!--<label>Blog Config Options 2</label>-->
+            <!--<tab>inchoo_config</tab>-->
+            <!--<frontend_type>text</frontend_type>-->
+            <!--<sort_order>100</sort_order>-->
+            <!--<show_in_default>1</show_in_default>-->
+            <!--<show_in_website>1</show_in_website>-->
+            <!--<show_in_store>1</show_in_store>-->
+        <!--</blog_option2>-->
+        <general>
+            <groups>
+                <example>
+                    <label>Example of Adding a Group</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </example>
+            </groups>
+        </general>
+    </sections>
+</config>

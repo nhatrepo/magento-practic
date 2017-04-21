@@ -21,4 +21,47 @@ class Practice_Weblog_IndexController extends Mage_Core_Controller_Front_Action{
         $userData = $user->getData();
         var_dump($userData);
     }
+
+    public function createNewPostAction() {
+        $blogpost = Mage::getModel('weblog/post');
+        $blogpost->setTitle('The title of post');
+        $blogpost->setPost('This post was created from code!');
+        $blogpost->save();
+        echo 'post created';
+    }
+
+    public function editPostAction(){
+        $params = $this->getRequest()->getParams();
+        $post = Mage::getModel('weblog/post');
+        if(isset($params['id'])) {
+            $post->load($params['id']);
+            $post->setTitle('Edit Title');
+            $post->save();
+        }
+        echo __METHOD__;
+    }
+
+    public function deletePostAction(){
+        $params = $this->getRequest()->getParams();
+        $post = Mage::getModel('weblog/post');
+        if(isset($params['id'])) {
+            $post->load($params['id']);
+            $post->delete();
+            echo "Deleted post";
+        }
+        echo __METHOD__;
+    }
+
+    public function showAllPostAction(){
+        echo __METHOD__ . "<br>";
+        $posts = Mage::getModel('weblog/post')
+                        ->getCollection();
+        foreach ($posts as $post){
+//            echo "Title: " . $post['title'] . "<br>";
+//            echo "Post: " . $post['post'] . "<br>";
+            echo '<h3>'.$post->getTitle().'</h3>';
+            echo nl2br($post->getPost());
+        }
+
+    }
 }
